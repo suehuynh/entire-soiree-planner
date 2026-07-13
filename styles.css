@@ -1,0 +1,82 @@
+/* Prefer installing Google Sans locally for exact look. Fallback to Inter. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root{
+  --bg1:#071022;
+  --bg2:#ffecd2;
+  --accent:#ff7a59;
+  --accent-2:#ffd27f;
+  --card: rgba(11,18,32,0.6);
+  --muted:#d6cfc6;
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* use Google Sans when available, fall back to Inter / system fonts */
+*{box-sizing:border-box;font-family:'Google Sans',Inter,Segoe UI,system-ui,-apple-system,Roboto,'Helvetica Neue',Arial;color:var(--muted)}
+html,body,#app{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 400px at 10% 10%, rgba(255,160,112,0.06), transparent),
+              linear-gradient(180deg,var(--bg1),#192432 60%, #042028 100%);
+  -webkit-font-smoothing:antialiased;
+  padding:32px;
+}
+.container{max-width:980px;margin:0 auto}
+.hero{
+  padding:28px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,250,240,0.02), rgba(0,0,0,0.06));
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  margin-bottom:20px;
+  text-align:center;
+  backdrop-filter:blur(6px);
+}
+.hero h1{color:var(--accent-2);font-size:30px;margin:0 0 6px}
+.tag{color:var(--muted);margin:0 0 12px}
+.countdown-card{
+  display:inline-block;padding:16px 20px;border-radius:14px;
+  background:linear-gradient(135deg, rgba(255,122,89,0.08), rgba(255,210,120,0.03));
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.countdown{font-weight:700;font-size:20px;color:var(--accent)}
+.muted{opacity:.95;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 12px 36px rgba(0,0,0,0.5);
+  border:1px solid rgba(255,255,255,0.03);
+  backdrop-filter:blur(6px);
+}
+.card h2{margin:0 0 12px;color:var(--accent-2)}
+.controls{display:flex;gap:10px;margin-bottom:12px}
+.controls input, .controls select{
+  flex:1;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);
+  background:var(--glass);color:var(--muted);
+  outline:none;
+}
+.controls button{
+  padding:9px 14px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#ff5a3a);
+  border:none;color:white;cursor:pointer;
+  box-shadow:0 6px 20px rgba(255,90,60,0.12);
+}
+#guest-table{width:100%;border-collapse:collapse}
+#guest-table th,#guest-table td{padding:10px;text-align:left}
+#guest-table tbody tr{border-top:1px dashed rgba(255,255,255,0.02)}
+.status{padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+.status.yes{background:linear-gradient(90deg,#ffd27f33,#ff7a5933);color:var(--accent)}
+.status.no{background:rgba(255,255,255,0.02);color:#a8b4c2}
+.status.pending{background:rgba(255,255,255,0.02);color:#d6cfc6}
+.btn-clear{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:12px;color:var(--muted);cursor:pointer}
+
+#drinks-list{padding-left:18px;margin:0}
+#drinks-list li{margin:10px 0;padding:12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,200,120,0.02));}
+.note{margin-top:18px;text-align:center}
+
+/* string-light effect */
+body::before{content:"";position:fixed;left:0;top:0;right:0;height:220px;background:radial-gradient(ellipse at center, rgba(255,210,150,0.08), transparent 40%);pointer-events:none}
+
+@media (max-width:900px){.grid{grid-template-columns:1fr}.hero{padding:18px}.controls{flex-direction:column} .controls input{width:100%}}
