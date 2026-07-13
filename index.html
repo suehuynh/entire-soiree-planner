@@ -7,6 +7,69 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="string-lights" aria-hidden="true">
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img">
+      <defs>
+        <radialGradient id="bulbGrad" cx="35%" cy="30%" r="60%">
+          <stop offset="0%" stop-color="#fff7d6" stop-opacity="1" />
+          <stop offset="60%" stop-color="#ffd27f" stop-opacity="0.95" />
+          <stop offset="100%" stop-color="#ff7a59" stop-opacity="0.8" />
+        </radialGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- hand-drawn string path -->
+      <path d="M0,50 C150,30 350,80 600,50 C850,20 1050,70 1200,50" stroke="#2b1f16" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9" />
+
+      <!-- bulbs: warm, soft glow, gentle sway -->
+      <!-- positions chosen across the width to feel organic -->
+      <g class="bulb-group" filter="url(#glow)">
+        <g class="bulb" transform="translate(60,46)">
+          <circle r="10" fill="url(#bulbGrad)" />
+          <circle r="22" fill="#ffd27f" opacity="0.12" />
+        </g>
+        <g class="bulb" transform="translate(160,36)">
+          <circle r="9" fill="url(#bulbGrad)" />
+          <circle r="20" fill="#ffd27f" opacity="0.12" />
+        </g>
+        <g class="bulb" transform="translate(280,58)">
+          <circle r="10" fill="url(#bulbGrad)" />
+          <circle r="24" fill="#ffd27f" opacity="0.11" />
+        </g>
+        <g class="bulb" transform="translate(420,40)">
+          <circle r="9" fill="url(#bulbGrad)" />
+          <circle r="20" fill="#ffd27f" opacity="0.12" />
+        </g>
+        <g class="bulb" transform="translate(580,52)">
+          <circle r="11" fill="url(#bulbGrad)" />
+          <circle r="26" fill="#ffd27f" opacity="0.12" />
+        </g>
+        <g class="bulb" transform="translate(720,36)">
+          <circle r="9" fill="url(#bulbGrad)" />
+          <circle r="20" fill="#ffd27f" opacity="0.12" />
+        </g>
+        <g class="bulb" transform="translate(860,58)">
+          <circle r="10" fill="url(#bulbGrad)" />
+          <circle r="24" fill="#ffd27f" opacity="0.11" />
+        </g>
+        <g class="bulb" transform="translate(1000,44)">
+          <circle r="9" fill="url(#bulbGrad)" />
+          <circle r="20" fill="#ffd27f" opacity="0.12" />
+        </g>
+        <g class="bulb" transform="translate(1120,50)">
+          <circle r="10" fill="url(#bulbGrad)" />
+          <circle r="22" fill="#ffd27f" opacity="0.12" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
   <main class="container">
     <header class="hero">
       <h1>Three-Night Summer Soirée</h1>
