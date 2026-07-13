@@ -92,6 +92,29 @@ function setupAddGuest(){
   });
 }
 
+function setupRSVPForm(){
+  const form = document.getElementById('rsvp-form');
+  const submitBtn = document.getElementById('rsvp-submit');
+  if(!form || !submitBtn) return;
+  // support both button click and form submit
+  const doSubmit = ()=>{
+    const name = document.getElementById('rsvp-name').value.trim();
+    const plus = document.getElementById('rsvp-plus').value.trim();
+    const attending = document.getElementById('rsvp-attending').value === 'yes' ? 'yes' : 'no';
+    if(!name){ alert('Please enter your name to RSVP.'); return; }
+    state.guests.push({ id: idCounter++, name, plus, rsvp: attending });
+    saveState(state);
+    renderGuests();
+    form.reset();
+    // lightweight confirmation
+    const prev = submitBtn.textContent;
+    submitBtn.textContent = 'Thanks!';
+    setTimeout(()=> submitBtn.textContent = prev, 1200);
+  };
+  submitBtn.addEventListener('click', (e)=>{ e.preventDefault(); doSubmit(); });
+  form.addEventListener('submit', (e)=>{ e.preventDefault(); doSubmit(); });
+}
+
 // Countdown
 function updateCountdown(){
   const el = document.getElementById('countdown');

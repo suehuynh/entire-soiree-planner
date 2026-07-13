@@ -18,6 +18,20 @@
       </div>
     </header>
 
+    <section class="card" id="rsvp-card">
+      <h2>RSVP</h2>
+      <form id="rsvp-form" class="controls" onsubmit="return false;">
+        <input id="rsvp-name" placeholder="Your full name" />
+        <select id="rsvp-attending">
+          <option value="yes">Attending</option>
+          <option value="no">Regrets</option>
+        </select>
+        <input id="rsvp-plus" placeholder="Plus-one (optional)" />
+        <button id="rsvp-submit">Submit RSVP</button>
+      </form>
+      <p class="muted note" style="margin-top:8px">Guests: your RSVP will appear below immediately. Data stored locally in your browser.</p>
+    </section>
+
     <section class="grid">
       <section class="card" id="guests-card">
         <h2>Guest List</h2>
